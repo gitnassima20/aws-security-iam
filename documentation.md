@@ -30,7 +30,7 @@ The tag I've used for my EC2 instances is called **Env** and the value I have
 assigned for my instances are **production** and **development** to label the
 instances used in production vs development environments.
 
-![alt text](aws-security-iam/screenshots/tags-panel-setup.PNG)
+![alt text](screenshots/tags-panel-setup.PNG)
 
 ### 3. IAM Policies:
 
@@ -53,7 +53,7 @@ determines whether to *allow or deny* actions, Action specifies the *AWS operati
 
 **My JSON Policy**
 
-![alt text](aws-security-iam/screenshots/policy-json-vis.PNG)
+![alt text](screenshots/policy-json-vis.PNG)
 
 ### 4. Account Alias:
 
@@ -63,7 +63,7 @@ using the **default AWS account ID**.
 
 Now, my new AWS console sign-in URL is: 'https://spacegalaxy.signin.aws.amazon.com/console'
 
-![alt text](aws-security-iam/screenshots/account-alias.PNG)
+![alt text](screenshots/account-alias.PNG)
 
 ### 5. IAM Users and User Groups:
 
@@ -91,7 +91,7 @@ Once I logged in as my IAM user, I noticed several access denied messages.
 This is because the IAM userʼs permissions are restricted by the attached
 policies, limiting access to certain resources and actions.
 
-![alt text](aws-security-iam/screenshots/IAM-user-signin-details.PNG)
+![alt text](screenshots/IAM-user-signin-details.PNG)
 
 
 ### 7. Testing IAM Policies:
@@ -104,7 +104,7 @@ When I tried to stop the production instance, the action was denied. This
 occurred because the policy only doesn't allow actions on EC2 instances
 tagged with Env: production.
 
-![alt text](aws-security-iam/screenshots/not-authorized-to-stop-instance-err.PNG)
+![alt text](screenshots/not-authorized-to-stop-instance-err.PNG)
 
 
 **Stopping the development instance**
@@ -112,12 +112,12 @@ Next, when I tried to stop the development instance, the action was successful.
 This was because the policy allows full access to EC2 instances tagged with
 Env: development.
 
-![alt text](aws-security-iam/screenshots/stopping-dev-instance-success-banner.PNG)
+![alt text](screenshots/stopping-dev-instance-success-banner.PNG)
 
 ### 8.Policy simulator:
 
 If you're working on a real project, you don’t want to test policies casually by applying them directly to resources. Instead, it’s safer and more efficient to use the Policy Simulator to verify that your policies behave as expected without risking any impact on functional resources.
 
-![alt text](aws-security-iam/screenshots/IAM-Policy-Stimulator.PNG)
+![alt text](screenshots/IAM-Policy-Stimulator.PNG)
 
 Thank you to https://learn.nextwork.org/ for your guidance \(￣︶￣*\))
